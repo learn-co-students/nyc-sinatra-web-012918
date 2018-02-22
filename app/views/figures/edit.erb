@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    <h1>Update <%= @figure.name %></h1>
+    <h1>Update <%=@figure.name%></h1>
 
     <form method="post" action="/figures/<%=@figure.id%>">
       <input id="hidden" type="hidden" name="_method" value="patch">

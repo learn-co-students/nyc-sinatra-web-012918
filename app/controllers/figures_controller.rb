@@ -37,7 +37,7 @@ class FiguresController < ApplicationController
   patch '/figures' do
     @figure = Figure.find_by_id(params[:id])
     @figure = @figure.update(params[:figure])
-    @figure
+
     erb :show
   end
 
