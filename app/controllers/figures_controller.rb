@@ -1,4 +1,5 @@
 class FiguresController < ApplicationController
+  set :method_override, true
 
   get '/figures' do
     @figures = Figure.all
@@ -29,4 +30,22 @@ class FiguresController < ApplicationController
     redirect '/figures'
   end
 
+  get '/figures/:id/edit' do
+    @figure = Figure.find(params[:id])
+    erb :'/figures/edit'
+  end
+
+  get '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    erb :'/figures/show'
+  end
+
+  patch '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    @figure.update(name: params[:figure_name])
+    @figure.save
+    params[:landmark][:name].each do |landmark|
+      @figure.landmarks << Landmark.create(name: landmark)
+    end
+  end
 end
