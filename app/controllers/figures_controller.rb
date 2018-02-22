@@ -1,6 +1,6 @@
 class FiguresController < ApplicationController
   set :views, 'app/views/figures'
-
+  set :method_override, true
 
 
   get '/figures' do
@@ -36,11 +36,10 @@ class FiguresController < ApplicationController
     erb :edit
   end
 
-  patch '/figures' do
-    binding.pry
+  patch '/figures/:id' do
     @figure = Figure.find(params[:id])
-    @figure.update(params[:figure])
-    @figure
+    @figure = @figure.update(params[:figure])
+    @landmarks = @figure.landmarks
     erb :show
   end
 

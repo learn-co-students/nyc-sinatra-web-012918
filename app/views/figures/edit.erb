@@ -4,9 +4,9 @@
   </head>
   <body>
 
-    <form method="post" action="/figures">
+    <form action="/figures/<%=@figure.id%>" method="post">
       <input id="hidden" type="hidden" name="_method" value="patch">
-      Name: <input id="figure_name" type="text" name="figure[name]" value="<%=@figure.name%>">
+      Name: <input id="figure_name" type="text" name="figure[name]" value="<%=@figure.name%>" "figure[title_ids]">
 
       <br></br>
       <%@landmarks.each do |landmark|%>
@@ -24,7 +24,7 @@
       <label>Create title:</label>
       <input id="new_title" type="text" name="title[name]"></input>
 
-      <input type="submit" name="submit" id="Create New Figure">
+      <input type="submit" name="submit" id="Edit Figure">
     </form>
   </body>
 </html>
