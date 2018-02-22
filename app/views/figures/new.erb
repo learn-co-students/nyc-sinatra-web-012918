@@ -11,12 +11,12 @@
 
       <p><label for="figure[title_ids][]">Title ID(s): </label><p>
       <% @titles.each do |title| %>
-      <p><input id="<%= "title_#{title.id}" %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"><%= "title_#{title.id}" %></p>
+      <p><input id="<%= "title_#{title.id}" %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"><%= "#{title.name}" %></p>
       <% end %>
 
       <p><label for="figure[landmark_ids][]">Landmark ID(s): </label><p>
       <% @landmarks.each do |landmark| %>
-      <p><input id="<%= "landmark_#{landmark.id}" %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"><%= "landmark_#{landmark.id}" %></p>
+      <p><input id="<%= "landmark_#{landmark.id}" %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"><%= "#{landmark.name}" %></p>
       <% end %>
 
       <label for="landmark[name]">Landmark Name: </label>
