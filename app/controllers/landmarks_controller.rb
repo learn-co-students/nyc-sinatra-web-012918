@@ -34,11 +34,11 @@ class LandmarksController < ApplicationController
 
   patch '/landmarks/:id' do
     @landmark = Landmark.find_by_id(params[:id])
-    # @landmark.update(params[:landmark])
-    @landmark.year_completed = params[:landmark][:year_completed]
-
-    @landmark.name = params[:landmark][:name]
-    @landmark.save
+    @landmark.update(name: params[:landmark][:name], year_completed: params[:landmark][:year_completed])
+    # @landmark.year_completed = params[:landmark][:year_completed]
+    #
+    # @landmark.name = params[:landmark][:name]
+    # @landmark.save
     erb :show
   end
 end
