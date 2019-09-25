@@ -1,0 +1,13 @@
+<h1><%= @figure.name %></h1>
+
+Figure Name: <%= @figure.name %><br>
+Figure Landmarks: <% @figure.landmarks.each do |landmark| %>
+<%= landmark.name %> <%= landmark.year_completed %><br>
+  <% end %><br>
+Figure Titles: <% @figure.titles.each do |title| %>
+<%= title.name %><br>
+  <% end %>
+
+  <form action="/figures/<%=@figure.id %>/edit" method="post">
+    <input type="submit" id="submit" value="edit">
+  </form>
