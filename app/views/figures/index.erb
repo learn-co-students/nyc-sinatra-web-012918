@@ -1,0 +1,9 @@
+<h1>Figures of NYC</h1>
+
+<%Figure.all.each do |fig|%>
+  <p>
+    <a href="/figures/<%=fig.id%>">
+      <%=fig.name%>
+    </a>
+  </p>
+<%end%>
